@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Italian Vintage Deco – MS | Antiquariato & Design</title>
+
+  <meta name="description"
+        content="Italian Vintage Deco – MS. Antiquariato, vintage e design italiano selezionato. Valutazioni gratuite, acquisto diretto e gestione di patrimoni e collezioni.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f2ede3;
+      color: #4b1619;
+    }
+
+    /* =========================
+       HERO / HOME
+       ========================= */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+
+      background-image:
+        linear-gradient(
+          rgba(35, 15, 12, 0.18),
+          rgba(35, 15, 12, 0.24)
+        ),
+        url("images/home-hero.png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    .navbar {
+      width: 100%;
+      padding: 22px 5%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: rgba(246, 241, 230, 0.90);
+      border-bottom: 1px solid rgba(124, 91, 35, 0.35);
+      backdrop-filter: blur(5px);
+
+      position: relative;
+      z-index: 10;
+    }
+
+    .nav-links {
+      list-style: none;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 34px;
+    }
+
+    .nav-links a {
+      color: #651d22;
+      text-decoration: none;
+
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.65;
+    }
+
+    /* =========================
+       HERO CONTENT
+       ========================= */
+
+    .hero-content {
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 70px 20px 120px;
+    }
+
+    .brand-box {
+      background: rgba(245, 239, 226, 0.90);
+
+      border: 1px solid rgba(151, 112, 42, 0.60);
+
+      padding: 28px 48px;
+
+      max-width: 760px;
+      width: 90%;
+
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .brand-box h1 {
+      color: #671c22;
+
+      font-size: clamp(34px, 5vw, 66px);
+      font-weight: normal;
+
+      letter-spacing: 3px;
+
+      line-height: 1.05;
+    }
+
+    .brand-box .ms {
+      display: block;
+
+      margin-top: 5px;
+
+      color: #9a793c;
+
+      font-size: clamp(25px, 3vw, 38px);
+      letter-spacing: 8px;
+    }
+
+    .divider {
+      width: 120px;
+      height: 1px;
+
+      margin: 18px auto;
+
+      background: #a78445;
+    }
+
+    .brand-box p {
+      color: #5b2224;
+
+      font-size: clamp(16px, 2vw, 21px);
+      letter-spacing: 1.2px;
+
+      line-height: 1.5;
+    }
+
+    /* =========================
+       BUTTONS
+       ========================= */
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+
+      margin-top: 28px;
+
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+
+      min-width: 215px;
+
+      padding: 15px 25px;
+
+      text-decoration: none;
+      text-transform: uppercase;
+
+      font-size: 13px;
+      letter-spacing: 1.7px;
+
+      border: 1px solid #a47e3d;
+
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #681d22;
+      color: #fffaf0;
+    }
+
+    .btn-primary:hover {
+      background: #511419;
+    }
+
+    .btn-secondary {
+      background: rgba(245, 239, 226, 0.94);
+      color: #681d22;
+    }
+
+    .btn-secondary:hover {
+      background: #ffffff;
+    }
+
+    /* =========================
+       INTRO SECTION
+       ========================= */
+
+    .intro {
+      padding: 75px 20px;
+
+      text-align: center;
+
+      background: #f4efe5;
+    }
+
+    .intro-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .intro h2 {
+      color: #671c22;
+
+      font-size: clamp(27px, 4vw, 42px);
+      font-weight: normal;
+
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      color: #5f4b3d;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+
+      line-height: 1.8;
+    }
+
+    /* =========================
+       WHATSAPP
+       ========================= */
+
+    .whatsapp {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 58px;
+      height: 58px;
+
+      border-radius: 50%;
+
+      background: #681d22;
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 12px;
+
+      border: 2px solid #c5a35e;
+
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+
+      z-index: 20;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 900px) {
+
+      .navbar {
+        padding: 18px 15px;
+      }
+
+      .nav-links {
+        gap: 13px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .hero-content {
+        padding-top: 50px;
+      }
+
+      .brand-box {
+        padding: 25px 18px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        min-height: 92vh;
+      }
+
+      .navbar {
+        position: relative;
+      }
+
+      .nav-links {
+        gap: 9px 15px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+        letter-spacing: 0.7px;
+      }
+
+      .brand-box {
+        width: 94%;
+      }
+
+      .brand-box h1 {
+        letter-spacing: 1px;
+      }
+
+      .hero-buttons {
+        width: 100%;
+      }
+
+      .btn {
+        width: 90%;
+        max-width: 310px;
+      }
+
+      .intro {
+        padding: 55px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header class="navbar">
+
+    <nav>
+      <ul class="nav-links">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="cosa-acquistiamo.html">Cosa acquistiamo</a>
+        </li>
+
+        <li>
+          <a href="selezione.html">Selezione</a>
+        </li>
+
+        <li>
+          <a href="patrimoni.html">Patrimoni &amp; Collezioni</a>
+        </li>
+
+        <li>
+          <a href="chi-siamo.html">Chi siamo</a>
+        </li>
+
+        <li>
+          <a href="contatti.html">Contatti</a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <!-- HOME HERO -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="brand-box">
+
+          <h1>
+            ITALIAN VINTAGE DECO
+            <span class="ms">MS</span>
+          </h1>
+
+          <div class="divider"></div>
+
+          <p>
+            Antiquariato &bull; Vintage &bull; Design Italiano
+          </p>
+
+        </div>
+
+
+        <div class="hero-buttons">
+
+          <a class="btn btn-primary"
+             href="cosa-acquistiamo.html">
+            Vendi a noi
+          </a>
+
+          <a class="btn btn-secondary"
+             href="selezione.html">
+            Scopri la selezione
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+      <div class="intro-inner">
+
+        <h2>
+          Oggetti con una storia. Valore senza tempo.
+        </h2>
+
+        <p>
+          Selezioniamo antiquariato, vintage e design italiano
+          con particolare attenzione alla qualità, all'autenticità
+          e al valore collezionistico.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- WHATSAPP
+       Inseriremo il collegamento definitivo successivamente.
+  -->
+
+  <a class="whatsapp"
+     href="#"
+     aria-label="Contattaci su WhatsApp">
+    WA
+  </a>
+
+</body>
+</html>
