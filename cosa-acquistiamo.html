@@ -109,22 +109,18 @@ nav a {
     padding: 10px 0;
 }
 
-nav a.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 1px;
-    height: 1px;
-    background: var(--gold);
+nav a.active {
+    color: #9a793c;
+    font-weight: bold;
+    border-bottom: 1px  solid #9a793c;
+    padding-bottom:  4px;
 }
-
 /* INTRO */
 
 .page-intro {
-    height: 109px;
+    height: 78px;
     text-align: center;
-    padding: 13px 20px 5px;
+    padding: 7px 20px 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,16 +128,16 @@ nav a.active::after {
 
 .page-intro h1 {
     color: var(--burgundy);
-    font-size: clamp(36px, 3.6vw, 54px);
+    font-size: clamp(28px, 2.8vw, 40px);
     line-height: 1;
     font-weight: normal;
     letter-spacing: 1px;
 }
 
 .page-intro p {
-    margin-top: 6px;
+    margin-top: 3px;
     color: #211b18;
-    font-size: clamp(15px, 1.5vw, 23px);
+    font-size: clamp(13px, 1.2vw, 18px);
     line-height: 1.15;
 }
 
@@ -161,7 +157,7 @@ nav a.active::after {
 }
 
 .category {
-    height: 279px;
+    height: 215px;
     display: grid;
     grid-template-columns: 58% 42%;
     overflow: hidden;
@@ -184,7 +180,7 @@ nav a.active::after {
 
 .category-content {
     height: 100%;
-    padding: 12px 16px;
+    padding: 6px 12px;
     background: rgba(250,247,239,.95);
     display: flex;
     flex-direction: column;
@@ -210,7 +206,7 @@ nav a.active::after {
     line-height: 1.35;
     font-weight: normal;
     text-transform: uppercase;
-    margin-bottom: 22px;
+    margin-bottom: 8px;
 }
 
 .category-content p {
