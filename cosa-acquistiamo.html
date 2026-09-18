@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cosa Acquistiamo | Italian Vintage Deco – MS</title>
+
+    <meta name="description"
+          content="Italian Vintage Deco – MS acquista antiquariato, arte, vetri di Murano, illuminazione, mobili, sculture, gioielli, argenti e oggetti da collezione. Valutazione gratuita e senza impegno.">
+
+    <style>
+
+        /* =========================================
+           BASE
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f5efe2;
+            color: #3f1719;
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+
+        /* =========================================
+           HEADER / NAVIGATION
+        ========================================= */
+
+        header {
+            background: rgba(245, 239, 226, 0.97);
+            border-bottom: 1px solid rgba(167, 132, 69, 0.45);
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-container {
+            width: 94%;
+            max-width: 1500px;
+            margin: 0 auto;
+
+            min-height: 82px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .logo {
+            color: #671c22;
+            white-space: nowrap;
+        }
+
+        .logo-main {
+            display: block;
+            font-size: clamp(20px, 2vw, 31px);
+            letter-spacing: 0.4px;
+            line-height: 1.1;
+        }
+
+        .logo-sub {
+            display: block;
+            margin-top: 5px;
+
+            color: #5b2224;
+
+            font-size: 12px;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .gold {
+            color: #a78445;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            gap: clamp(20px, 2.7vw, 45px);
+        }
+
+        nav a {
+            position: relative;
+
+            color: #5b2224;
+
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+
+            padding: 29px 0 24px;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+
+            left: 50%;
+            bottom: 17px;
+
+            width: 0;
+            height: 1px;
+
+            background: #a78445;
+
+            transform: translateX(-50%);
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+
+        /* =========================================
+           PAGE INTRO
+        ========================================= */
+
+        .page-intro {
+            text-align: center;
+
+            padding: 30px 20px 10px;
+
+            background: #f8f3e9;
+        }
+
+        .page-intro h1 {
+            color: #671c22;
+
+            font-weight: normal;
+            font-size: clamp(38px, 4.6vw, 66px);
+
+            letter-spacing: 2px;
+            line-height: 1.05;
+        }
+
+        .page-intro p {
+            max-width: 850px;
+            margin: 6px auto 0;
+
+            color: #3f1719;
+
+            font-size: clamp(17px, 1.6vw, 24px);
+            line-height: 1.45;
+        }
+
+        .title-ornament {
+            width: 90px;
+            height: 1px;
+
+            margin: 17px auto 0;
+
+            background: #a78445;
+        }
+
+
+        /* =========================================
+           CATEGORY GRID
+        ========================================= */
+
+        .categories {
+            width: 97%;
+            max-width: 1500px;
+
+            margin: 0 auto;
+            padding: 0 0 10px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            border-top: 1px solid rgba(167, 132, 69, 0.42);
+            border-left: 1px solid rgba(167, 132, 69, 0.42);
+        }
+
+        .category {
+            min-height: 300px;
+
+            display: grid;
+            grid-template-columns: 58% 42%;
+
+            background: #f8f3e9;
+
+            border-right: 1px solid rgba(167, 132, 69, 0.42);
+            border-bottom: 1px solid rgba(167, 132, 69, 0.42);
+        }
+
+        .category-image {
+            min-height: 300px;
+
+            background:
+                linear-gradient(
+                    rgba(80, 40, 25, 0.08),
+                    rgba(80, 40, 25, 0.08)
+                ),
+                #d8c7ad;
+
+            background-position: center;
+            background-size: cover;
+        }
+
+        /*
+        Quando carichiamo le fotografie, useremo per esempio:
+
+        .murano {
+            background-image: url("murano.jpg");
+        }
+
+        .dipinti {
+            background-image: url("dipinti.jpg");
+        }
+
+        ecc.
+        */
+
+        .category-text {
+            padding: 25px 18px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .category-symbol {
+            color: #a78445;
+
+            font-size: 25px;
+            line-height: 1;
+
+            margin-bottom: 14px;
+        }
+
+        .category-text h2 {
+            color: #671c22;
+
+            font-weight: normal;
+            font-size: clamp(18px, 1.5vw, 23px);
+
+            line-height: 1.25;
+
+            text-transform: uppercase;
+        }
+
+        .category-text p {
+            margin-top: 22px;
+
+            color: #3f1719;
+
+            font-size: clamp(15px, 1.2vw, 18px);
+            line-height: 1.55;
+        }
+
+
+        /* =========================================
+           LAST CATEGORY / SERVICE AREA
+        ========================================= */
+
+        .bottom-area {
+            width: 97%;
+            max-width: 1500px;
+
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 1.1fr 1.55fr 0.85fr;
+
+            border-left: 1px solid rgba(167, 132, 69, 0.42);
+            border-bottom: 1px solid rgba(167, 132, 69, 0.42);
+        }
+
+        .silver-block,
+        .collection-service,
+        .whatsapp-block {
+            min-height: 190px;
+
+            border-right: 1px solid rgba(167, 132, 69, 0.42);
+
+            background: #f8f3e9;
+        }
+
+        .silver-block {
+            display: grid;
+            grid-template-columns: 55% 45%;
+        }
+
+        .silver-image {
+            background: #d8c7ad;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .silver-text {
+            padding: 18px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .silver-text h2 {
+            color: #671c22;
+
+            font-weight: normal;
+            font-size: 19px;
+            line-height: 1.25;
+
+            text-transform: uppercase;
+        }
+
+        .silver-text p {
+            margin-top: 14px;
+
+            font-size: 16px;
+            line-height: 1.45;
+        }
+
+
+        /* =========================================
+           PATRIMONI / FREE VALUATION
+        ========================================= */
+
+        .collection-service {
+            padding: 18px 30px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .collection-top {
+            padding-bottom: 13px;
+            margin-bottom: 12px;
+
+            border-bottom: 1px solid rgba(167, 132, 69, 0.55);
+        }
+
+        .collection-top p {
+            font-size: 17px;
+        }
+
+        .collection-link {
+            display: inline-block;
+
+            margin-top: 5px;
+
+            color: #671c22;
+
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .collection-link:hover {
+            color: #a78445;
+        }
+
+        .valuation-title {
+            color: #3f1719;
+
+            font-size: 15px;
+            letter-spacing: 0.4px;
+
+            text-transform: uppercase;
+        }
+
+        .valuation-text {
+            margin-top: 4px;
+
+            font-size: 15px;
+        }
+
+        .valuation-free {
+            display: block;
+
+            margin-top: 2px;
+
+            color: #671c22;
+
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+
+        /* =========================================
+           WHATSAPP
+        ========================================= */
+
+        .whatsapp-block {
+            padding: 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .whatsapp-button {
+            width: 100%;
+            max-width: 300px;
+
+            padding: 12px 18px;
+
+            background: #147a3e;
+            color: #ffffff;
+
+            border-radius: 6px;
+
+            font-size: 18px;
+            line-height: 1.25;
+
+            text-transform: uppercase;
+
+            transition: transform 0.2s ease,
+                        background 0.2s ease;
+        }
+
+        .whatsapp-button:hover {
+            background: #116735;
+            transform: translateY(-1px);
+        }
+
+        .phone-number {
+            margin-top: 10px;
+
+            color: #147a3e;
+
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .click-here {
+            margin-top: 3px;
+
+            color: #3f1719;
+
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           BENEFITS
+        ========================================= */
+
+        .benefits {
+            width: 97%;
+            max-width: 1500px;
+
+            margin: 0 auto;
+            padding: 18px 0 20px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            background: #f5efe2;
+        }
+
+        .benefit {
+            min-height: 72px;
+
+            padding: 4px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 17px;
+
+            border-right: 1px solid rgba(167, 132, 69, 0.45);
+        }
+
+        .benefit:last-child {
+            border-right: none;
+        }
+
+        .benefit-icon {
+            color: #a78445;
+
+            font-size: 34px;
+            line-height: 1;
+        }
+
+        .benefit-text {
+            color: #3f1719;
+
+            font-size: 14px;
+            line-height: 1.45;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            padding: 22px 20px;
+
+            background: #5b2224;
+            color: #f5efe2;
+
+            text-align: center;
+
+            font-size: 13px;
+            letter-spacing: 0.6px;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 1150px) {
+
+            .nav-container {
+                flex-direction: column;
+
+                padding: 18px 0 10px;
+                gap: 8px;
+            }
+
+            .logo {
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+
+                gap: 10px 25px;
+            }
+
+            nav a {
+                padding: 10px 0 13px;
+            }
+
+            nav a::after {
+                bottom: 7px;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bottom-area {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .whatsapp-block {
+                grid-column: 1 / -1;
+            }
+
+            .benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefit:nth-child(2) {
+                border-right: none;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                width: 92%;
+            }
+
+            .logo-main {
+                font-size: 21px;
+            }
+
+            .logo-sub {
+                font-size: 10px;
+            }
+
+            nav ul {
+                gap: 5px 16px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .page-intro {
+                padding: 25px 18px 15px;
+            }
+
+            .page-intro h1 {
+                font-size: 38px;
+            }
+
+            .page-intro p {
+                font-size: 17px;
+            }
+
+            .categories {
+                width: 92%;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category {
+                grid-template-columns: 1fr;
+            }
+
+            .category-image {
+                min-height: 260px;
+            }
+
+            .category-text {
+                min-height: 210px;
+                padding: 25px;
+            }
+
+            .bottom-area {
+                width: 92%;
+
+                grid-template-columns: 1fr;
+            }
+
+            .silver-block {
+                grid-template-columns: 1fr;
+            }
+
+            .silver-image {
+                min-height: 250px;
+            }
+
+            .silver-text {
+                min-height: 190px;
+            }
+
+            .collection-service {
+                min-height: 230px;
+                padding: 25px;
+            }
+
+            .whatsapp-block {
+                min-height: 190px;
+            }
+
+            .benefits {
+                width: 92%;
+
+                grid-template-columns: 1fr;
+
+                padding-top: 10px;
+            }
+
+            .benefit,
+            .benefit:nth-child(2) {
+                justify-content: flex-start;
+
+                border-right: none;
+                border-bottom: 1px solid rgba(167, 132, 69, 0.35);
+
+                padding: 15px 20px;
+            }
+
+            .benefit:last-child {
+                border-bottom: none;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header>
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-main">
+                    <span class="gold">⚜</span>
+                    ITALIAN VINTAGE DECO – MS
+                </span>
+
+                <span class="logo-sub">
+                    <span class="gold">——</span>
+                    Arte · Antiquariato · Design da Collezione
+                    <span class="gold">——</span>
+                </span>
+
+            </a>
+
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="cosa-acquistiamo.html" class="active">
+                            Cosa acquistiamo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="selezione.html">Selezione</a>
+                    </li>
+
+                    <li>
+                        <a href="patrimoni.html">
+                            Patrimoni &amp; Collezioni
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="chi-siamo.html">Chi siamo</a>
+                    </li>
+
+                    <li>
+                        <a href="contatti.html">Contatti</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         INTRO
+    ========================================== -->
+
+    <section class="page-intro">
+
+        <h1>COSA ACQUISTIAMO</h1>
+
+        <p>
+            Cerchiamo oggetti speciali, scelti per qualità,
+            storia, manifattura e carattere.
+        </p>
+
+        <div class="title-ornament"></div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CATEGORIES
+    ========================================== -->
+
+    <main class="categories">
+
+        <div class="category-grid">
+
+
+            <!-- MURANO -->
+
+            <article class="category">
+
+                <div class="category-image murano"></div>
+
+                <div class="category-text">
+
+                    <div class="category-symbol">⚜</div>
+
+                    <h2>
+                        Murano &amp;<br>
+                        Vetri d'Arte
+                    </h2>
+
+                    <p>
+                        Vasi, lampadari, sculture e vetri
+                        d'arte da collezione.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- DIPINTI -->
+
+            <article class="category">
+
+                <div class="category-image dipinti"></div>
+
+                <div class="category-text">
+
+                    <div class="category-symbol">⚜</div>
+
+                    <h2>
+                        Dipinti &amp;<br>
+                        Opere d'Arte
+                    </h2>
+
+                    <p>
+                        Dipinti antichi, del XIX e XX secolo,
+                        opere firmate e non.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- ILLUMINAZIONE -->
+
+            <article class="category">
+
+                <div class="category-image illuminazione"></div>
+
+                <div class="category-text">
+
+                    <div class="category-symbol">⚜</div>
+
+                    <h2>
+                        Illuminazione<br>
+                        &amp; Design
+                    </h2>
+
+                    <p>
+                        Lampade, lampadari, applique e
+                        illuminazione d'epoca e di design.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- MOBILI -->
+
+            <article class="category">
+
+                <div class="category-image mobili"></div>
+
+                <div class="category-text">
+
+                    <div class="category-symbol">⚜</div>
+
+                    <h2>
+                        Mobili &amp;<br>
+                        Specchi
+                    </h2>
+
+                    <p>
+                        Arredi antichi, vintage e pezzi
+                        decorativi di particolare interesse.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- SCULTURE -->
+
+            <article class="category">
+
+                <div class="category-image sculture"></div>
+
+                <div class="category-text">
+
+                    <div class="category-symbol">⚜</div>
+
+                    <h2>
+                        Sculture &amp;<br>
+                        Arte Sacra
+                    </h2>
+
+                    <p>
+                        Sculture, bronzi, statue, icone
+                        e oggetti religiosi antichi.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- GIOIELLI -->
+
+            <article class="category">
+
+                <div class="category-image gioielli"></div>
+
+                <div class="category-text">
+
+                    <div class="category-symbol">⚜</div>
+
+                    <h2>
+                        Gioielli &amp;<br>
+                        Preziosi
+                    </h2>
+
+                    <p>
+                        Gioielli antichi e vintage, oro,
+                        diamanti, pietre preziose e oggetti
+                        preziosi di alta qualità.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================
+         BOTTOM AREA
+    ========================================== -->
+
+    <section class="bottom-area">
+
+
+        <!-- ARGENTI -->
+
+        <div class="silver-block">
+
+            <div class="silver-image"></div>
+
+            <div class="silver-text">
+
+                <div class="category-symbol">⚜</div>
+
+                <h2>
+                    Argenti &amp;<br>
+                    Oggetti da Collezione
+                </h2>
+
+                <p>
+                    Argenteria, oggetti decorativi
+                    e curiosità di qualità.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PATRIMONI / VALUTAZIONE -->
+
+        <div class="collection-service">
+
+            <div class="collection-top">
+
+                <p>
+                    Hai un'intera casa, un arredamento<br>
+                    o una collezione da gestire?
+                </p>
+
+                <a class="collection-link"
+                   href="patrimoni.html">
+
+                    Scopri il servizio Patrimoni &amp; Collezioni →
+
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <div class="valuation-title">
+                    Non sei sicuro del valore del tuo oggetto?
+                </div>
+
+                <div class="valuation-text">
+                    Inviaci alcune fotografie.
+                </div>
+
+                <span class="valuation-free">
+                    La valutazione è gratuita e senza impegno.
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- WHATSAPP -->
+
+        <div class="whatsapp-block">
+
+            <a
+                class="whatsapp-button"
+                href="https://wa.me/393518288621"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                CONTATTACI<br>
+                SU WHATSAPP
+
+            </a>
+
+            <div class="phone-number">
+                +39 351 828 8621
+            </div>
+
+            <a
+                class="click-here"
+                href="https://wa.me/393518288621"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Clicca qui →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         BENEFITS
+    ========================================== -->
+
+    <section class="benefits">
+
+        <div class="benefit">
+
+            <div class="benefit-icon">⌕</div>
+
+            <div class="benefit-text">
+                Valutazione gratuita<br>
+                e senza impegno
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">◇</div>
+
+            <div class="benefit-text">
+                Acquisto diretto<br>
+                e immediato
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">♢</div>
+
+            <div class="benefit-text">
+                Massima discrezione<br>
+                e professionalità
+            </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon">▣</div>
+
+            <div class="benefit-text">
+                Ritiro e trasporto<br>
+                ovunque in Italia
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        © 2026 Italian Vintage Deco – MS · Arte · Antiquariato · Design da Collezione
+
+    </footer>
+
+
+</body>
+</html>
