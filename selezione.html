@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Selezione | Italian Vintage Deco – MS</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --burgundy: #5b1016;
+    --burgundy-dark: #481014;
+    --gold: #a77b28;
+    --gold-light: #d4b471;
+    --ivory: #faf7ef;
+    --border: rgba(167,123,40,.35);
+}
+
+html, body {
+    width: 100%;
+}
+
+body {
+    background: var(--ivory);
+    color: #241d1a;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.35;
+}
+
+/* HEADER */
+
+header {
+    height: 52px;
+    background: #fbf8f1;
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1536px;
+    height: 100%;
+    margin: auto;
+    padding: 3px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-text strong {
+    display: block;
+    color: var(--burgundy);
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.brand-text span {
+    display: block;
+    color: #40362f;
+    margin-top: 7px;
+    font-size: 12px;
+    letter-spacing: .5px;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 39px;
+    height: 100%;
+}
+
+nav a {
+    position: relative;
+    color: var(--burgundy);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+nav a.active {
+    color: #9a793c;
+    font-weight: bold;
+    border-bottom: 1px solid #9a793c;
+    padding-bottom: 4px;
+}
+
+/* SELECTION */
+
+.selection-page {
+    min-height: calc(100vh - 79px);
+    padding: 46px 20px 39px;
+    color: #f8edda;
+    background-color: #3f0c13;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(19,3,7,.76) 0%,
+            rgba(50,7,14,.24) 12%,
+            rgba(65,10,18,.08) 26%,
+            rgba(65,10,18,.08) 74%,
+            rgba(50,7,14,.24) 88%,
+            rgba(19,3,7,.76) 100%
+        ),
+        url("images/selection-background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.selection-inner {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+}
+
+.selection-heading {
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+.selection-heading::after {
+    content: "";
+    display: block;
+    width: 82px;
+    height: 1px;
+    margin: 17px auto 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold-light),
+        transparent
+    );
+}
+
+.selection-heading h1 {
+    color: #f4e5c9;
+    font-size: clamp(31px, 3.1vw, 48px);
+    font-weight: normal;
+    letter-spacing: 2.5px;
+    line-height: 1.1;
+}
+
+.selection-heading p {
+    margin-top: 10px;
+    color: #ddc9a8;
+    font-size: clamp(14px, 1.35vw, 18px);
+    font-style: italic;
+    letter-spacing: .25px;
+}
+
+/* GALLERY */
+
+.gallery-shell {
+    position: relative;
+    padding: 0 60px;
+}
+
+.gallery-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform .65s cubic-bezier(.22,.61,.36,1);
+    will-change: transform;
+}
+
+.gallery-item {
+    flex: 0 0 calc(100% / 3);
+    padding: 0 11px;
+}
+
+.gallery-card {
+    position: relative;
+    height: clamp(330px, 35vw, 475px);
+    overflow: hidden;
+    cursor: zoom-in;
+    border: 1px solid rgba(212,180,113,.65);
+    background: rgba(31,5,10,.8);
+    box-shadow: 0 18px 38px rgba(0,0,0,.32);
+}
+
+.gallery-card::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(245,222,179,.24);
+    pointer-events: none;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .55s ease, filter .55s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.025);
+    filter: brightness(1.04);
+}
+
+.missing-image {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(137,81,61,.28),
+            transparent 54%
+        ),
+        linear-gradient(
+            145deg,
+            #300810,
+            #5a1420 50%,
+            #26060c
+        );
+}
+
+.expand-icon {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    z-index: 2;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(247,228,194,.7);
+    background: rgba(52,8,15,.62);
+    color: #f7e4c3;
+}
+
+.expand-icon svg {
+    width: 17px;
+    height: 17px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+}
+
+/* ARROWS */
+
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    width: 42px;
+    height: 58px;
+    border: 1px solid rgba(212,180,113,.48);
+    background: rgba(47,6,13,.62);
+    color: #ead1a4;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 35px;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background .25s ease, border-color .25s ease;
+}
+
+.gallery-arrow:hover {
+    background: rgba(102,24,34,.85);
+    border-color: rgba(230,197,134,.85);
+}
+
+.gallery-arrow:disabled {
+    opacity: .32;
+    cursor: default;
+}
+
+.gallery-arrow.prev {
+    left: 0;
+}
+
+.gallery-arrow.next {
+    right: 0;
+}
+
+/* DOTS */
+
+.gallery-dots {
+    min-height: 22px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.gallery-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 1px solid #c7a566;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: transform .25s ease, background .25s ease;
+}
+
+.gallery-dot.active {
+    background: #d8ba7c;
+    transform: scale(1.35);
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    background: rgba(13,2,4,.94);
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: min(1180px, 92vw);
+    max-height: 88vh;
+    object-fit: contain;
+    border: 1px solid rgba(212,180,113,.68);
+    box-shadow: 0 24px 65px rgba(0,0,0,.62);
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(230,205,159,.55);
+    background: rgba(70,10,18,.75);
+    color: #f4dfbd;
+    font-size: 31px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--burgundy-dark);
+    color: #eee3d2;
+    text-align: center;
+    padding: 7px 15px;
+    font-size: 9px;
+}
+
+/* TABLET */
+
+@media (max-width: 1150px) {
+    header {
+        height: auto;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        padding: 10px 15px 7px;
+        gap: 5px;
+    }
+
+    nav {
+        gap: 10px 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .selection-page {
+        min-height: calc(100vh - 111px);
+    }
+
+    .gallery-shell {
+        padding: 0 50px;
+    }
+
+    .gallery-item {
+        padding: 0 8px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+    .brand-text strong {
+        font-size: 19px;
+    }
+
+    .brand-text span {
+        font-size: 9px;
+    }
+
+    .header-inner {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    nav {
+        width: 100%;
+        gap: 0;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    nav a {
+        flex: 0 0 auto;
+        padding: 8px 0;
+        font-size: clamp(5.8px, 1.82vw, 8px);
+        letter-spacing: -.18px;
+    }
+
+    .selection-page {
+        padding: 35px 10px 30px;
+    }
+
+    .selection-heading {
+        margin-bottom: 27px;
+    }
+
+    .selection-heading h1 {
+        font-size: 30px;
+    }
+
+    .selection-heading p {
+        font-size: 14px;
+    }
+
+    .gallery-shell {
+        max-width: 520px;
+        margin: auto;
+        padding: 0 45px;
+    }
+
+    .gallery-item {
+        flex-basis: 100%;
+        padding: 0 4px;
+    }
+
+    .gallery-card {
+        height: min(112vw, 565px);
+    }
+
+    .gallery-arrow {
+        width: 36px;
+        height: 54px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 460px) {
+    .brand-text strong {
+        font-size: 16px;
+    }
+
+    .selection-page {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .gallery-shell {
+        padding: 0 36px;
+    }
+
+    .gallery-arrow {
+        width: 31px;
+    }
+
+    .gallery-dots {
+        gap: 8px;
+    }
+
+    .gallery-dot {
+        width: 6px;
+        height: 6px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header-inner">
+
+<a class="brand" href="index.html">
+<div class="brand-text">
+<strong>ITALIAN VINTAGE DECO – MS</strong>
+<span>— &nbsp; ARTE · ANTIQUARIATO · DESIGN DA COLLEZIONE &nbsp; —</span>
+</div>
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="cosa-acquistiamo.html">Cosa acquistiamo</a>
+<a href="selezione.html" class="active" aria-current="page">
+Selezione
+</a>
+<a href="patrimoni.html">Patrimoni &amp; Collezioni</a>
+<a href="chi-siamo.html">Chi siamo</a>
+<a href="contatti.html">Contatti</a>
+</nav>
+
+</div>
+</header>
+
+<main class="selection-page">
+<div class="selection-inner">
+
+<section class="selection-heading">
+<h1>LA NOSTRA SELEZIONE</h1>
+<p>Alcuni degli oggetti che trattiamo.</p>
+</section>
+
+<section
+class="gallery-shell"
+aria-label="Galleria della nostra selezione"
+>
+
+<button
+class="gallery-arrow prev"
+type="button"
+aria-label="Fotografie precedenti"
+>
+‹
+</button>
+
+<div class="gallery-window">
+<div class="gallery-track">
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-01.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-02.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-03.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-04.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-05.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-06.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-07.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-08.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-09.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-10.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-11.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-12.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-13.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-14.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-card" tabindex="0">
+<img
+src="images/selection-15.png"
+alt=""
+onerror="this.style.display='none'"
+>
+<span class="missing-image"></span>
+<span class="expand-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"></path>
+</svg>
+</span>
+</div>
+</div>
+
+</div>
+</div>
+
+<button
+class="gallery-arrow next"
+type="button"
+aria-label="Fotografie successive"
+>
+›
+</button>
+
+<div
+class="gallery-dots"
+aria-label="Pagine della galleria"
+></div>
+
+</section>
+</div>
+</main>
+
+<footer>
+© 2026 Italian Vintage Deco – MS · Arte · Antiquariato · Design da Collezione
+</footer>
+
+<div
+class="lightbox"
+role="dialog"
+aria-modal="true"
+aria-label="Fotografia ingrandita"
+>
+<button
+class="lightbox-close"
+type="button"
+aria-label="Chiudi"
+>
+×
+</button>
+
+<img src="" alt="">
+</div>
+
+<script>
+(function () {
+    const track =
+        document.querySelector(".gallery-track");
+
+    const items =
+        Array.from(
+            document.querySelectorAll(".gallery-item")
+        );
+
+    const cards =
+        Array.from(
+            document.querySelectorAll(".gallery-card")
+        );
+
+    const prev =
+        document.querySelector(".gallery-arrow.prev");
+
+    const next =
+        document.querySelector(".gallery-arrow.next");
+
+    const dotsBox =
+        document.querySelector(".gallery-dots");
+
+    const lightbox =
+        document.querySelector(".lightbox");
+
+    const lightboxImage =
+        lightbox.querySelector("img");
+
+    const lightboxClose =
+        document.querySelector(".lightbox-close");
+
+    let page = 0;
+
+    let visible =
+        window.innerWidth <= 760 ? 1 : 3;
+
+    items.forEach(function (item) {
+        const image =
+            item.querySelector("img");
+
+        const fallback =
+            item.querySelector(".missing-image");
+
+        function markImageAsMissing() {
+            image.style.display = "none";
+            fallback.textContent = "";
+            fallback.style.display = "flex";
+
+            item
+                .querySelector(".expand-icon")
+                .style.display = "none";
+
+            item
+                .querySelector(".gallery-card")
+                .classList.add("not-ready");
+        }
+
+        image.addEventListener(
+            "error",
+            markImageAsMissing
+        );
+
+        if (
+            image.complete &&
+            image.naturalWidth === 0
+        ) {
+            markImageAsMissing();
+        }
+    });
+
+    function totalPages() {
+        return Math.ceil(
+            items.length / visible
+        );
+    }
+
+    function buildDots() {
+        dotsBox.innerHTML = "";
+
+        for (
+            let i = 0;
+            i < totalPages();
+            i += 1
+        ) {
+            const dot =
+                document.createElement("button");
+
+            dot.type = "button";
+            dot.className = "gallery-dot";
+
+            dot.setAttribute(
+                "aria-label",
+                "Vai alla pagina " + (i + 1)
+            );
+
+            dot.addEventListener(
+                "click",
+                function () {
+                    page = i;
+                    updateGallery();
+                }
+            );
+
+            dotsBox.appendChild(dot);
+        }
+    }
+
+    function updateGallery() {
+        const maxPage =
+            totalPages() - 1;
+
+        page = Math.max(
+            0,
+            Math.min(page, maxPage)
+        );
+
+        track.style.transform =
+            "translateX(-" +
+            (page * 100) +
+            "%)";
+
+        prev.disabled =
+            page === 0;
+
+        next.disabled =
+            page === maxPage;
+
+        Array
+            .from(dotsBox.children)
+            .forEach(function (dot, index) {
+                dot.classList.toggle(
+                    "active",
+                    index === page
+                );
+
+                dot.setAttribute(
+                    "aria-current",
+                    index === page
+                        ? "true"
+                        : "false"
+                );
+            });
+    }
+
+    prev.addEventListener(
+        "click",
+        function () {
+            page -= 1;
+            updateGallery();
+        }
+    );
+
+    next.addEventListener(
+        "click",
+        function () {
+            page += 1;
+            updateGallery();
+        }
+    );
+
+    function openLightbox(card) {
+        if (
+            card.classList.contains("not-ready")
+        ) {
+            return;
+        }
+
+        const image =
+            card.querySelector("img");
+
+        lightboxImage.src =
+            image.src;
+
+        lightbox.classList.add("open");
+
+        document.body.style.overflow =
+            "hidden";
+
+        lightboxClose.focus();
+    }
+
+    cards.forEach(function (card) {
+        card.addEventListener(
+            "click",
+            function () {
+                openLightbox(card);
+            }
+        );
+
+        card.addEventListener(
+            "keydown",
+            function (event) {
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+                    event.preventDefault();
+                    openLightbox(card);
+                }
+            }
+        );
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove("open");
+        lightboxImage.src = "";
+        document.body.style.overflow = "";
+    }
+
+    lightboxClose.addEventListener(
+        "click",
+        closeLightbox
+    );
+
+    lightbox.addEventListener(
+        "click",
+        function (event) {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        }
+    );
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+            if (
+                event.key === "Escape" &&
+                lightbox.classList.contains("open")
+            ) {
+                closeLightbox();
+            }
+        }
+    );
+
+    window.addEventListener(
+        "resize",
+        function () {
+            const newVisible =
+                window.innerWidth <= 760
+                    ? 1
+                    : 3;
+
+            if (newVisible !== visible) {
+                visible = newVisible;
+                page = 0;
+                buildDots();
+                updateGallery();
+            }
+        }
+    );
+
+    buildDots();
+    updateGallery();
+}());
+</script>
+
+</body>
+</html>
