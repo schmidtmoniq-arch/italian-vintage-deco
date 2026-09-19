@@ -1,1 +1,1 @@
-Images for the Cosa Acquistiamo page 
+Images for the Italian Vintage Deco website 
