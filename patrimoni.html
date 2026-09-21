@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Patrimoni & Collezioni | Italian Vintage Deco – MS</title>
+
+  <meta name="description"
+        content="Patrimoni mobiliari, interi arredamenti e collezioni. Raccontaci la tua situazione e contatta Italian Vintage Deco – MS tramite WhatsApp.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f2ede3;
+      color: #4b1619;
+    }
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    .navbar {
+      width: 100%;
+      padding: 22px 5%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: rgba(246, 241, 230, 0.90);
+      border-bottom: 1px solid rgba(124, 91, 35, 0.35);
+      backdrop-filter: blur(5px);
+
+      position: relative;
+      z-index: 10;
+    }
+
+    .nav-links {
+      list-style: none;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 34px;
+    }
+
+    .nav-links a {
+      color: #651d22;
+      text-decoration: none;
+
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.65;
+    }
+
+    .nav-links a.active {
+      color: #9a793c;
+      font-weight: bold;
+      border-bottom: 1px solid #9a793c;
+      padding-bottom: 4px;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .patrimoni-hero {
+      min-height: 720px;
+
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(25, 14, 11, 0.73) 0%,
+          rgba(35, 18, 13, 0.55) 37%,
+          rgba(35, 18, 13, 0.16) 68%,
+          rgba(35, 18, 13, 0.08) 100%
+        ),
+        url("patrimoni-hero.png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-inner {
+      width: 90%;
+      max-width: 1180px;
+
+      margin: 0 auto;
+
+      padding: 90px 0;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+    }
+
+    .hero-copy h1 {
+      color: #fffaf0;
+
+      font-size: clamp(38px, 4.5vw, 62px);
+      font-weight: normal;
+
+      line-height: 1.08;
+      letter-spacing: 1px;
+
+      margin-bottom: 22px;
+    }
+
+    .hero-copy .lead {
+      color: #f0dba9;
+
+      font-size: clamp(21px, 2.3vw, 29px);
+      font-style: italic;
+
+      margin-bottom: 24px;
+    }
+
+    .hero-copy p {
+      max-width: 590px;
+
+      color: #f6f0e5;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+
+      line-height: 1.75;
+
+      margin-bottom: 28px;
+    }
+
+
+    /* =========================
+       BUTTONS
+       ========================= */
+
+    .btn {
+      display: inline-block;
+
+      min-width: 250px;
+
+      padding: 15px 25px;
+
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      font-size: 13px;
+      letter-spacing: 1.7px;
+
+      border: 1px solid #a47e3d;
+
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #681d22;
+      color: #fffaf0;
+    }
+
+    .btn-primary:hover {
+      background: #511419;
+    }
+
+    .btn-light {
+      background: #f4efe5;
+      color: #681d22;
+    }
+
+    .btn-light:hover {
+      background: #ffffff;
+    }
+
+
+    /* =========================
+       HERO TRUST POINTS
+       ========================= */
+
+    .hero-trust {
+      margin-top: 32px;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px 28px;
+    }
+
+    .hero-trust span {
+      color: #f3e4c3;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       GENERAL SECTIONS
+       ========================= */
+
+    .section {
+      padding: 85px 20px;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    .section-title {
+      color: #671c22;
+
+      text-align: center;
+
+      font-size: clamp(29px, 4vw, 43px);
+      font-weight: normal;
+
+      margin-bottom: 18px;
+    }
+
+    .gold-divider {
+      width: 80px;
+      height: 1px;
+
+      margin: 0 auto 45px;
+
+      background: #a78445;
+    }
+
+
+    /* =========================
+       CATEGORIES
+       ========================= */
+
+    .categories {
+      background: #f4efe5;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 0;
+
+      border-top: 1px solid rgba(154, 121, 60, 0.45);
+      border-bottom: 1px solid rgba(154, 121, 60, 0.45);
+    }
+
+    .category {
+      padding: 34px 28px;
+
+      text-align: center;
+
+      border-right: 1px solid rgba(154, 121, 60, 0.35);
+    }
+
+    .category:last-child {
+      border-right: none;
+    }
+
+    .category-number {
+      display: block;
+
+      color: #a78445;
+
+      font-size: 14px;
+      letter-spacing: 2px;
+
+      margin-bottom: 14px;
+    }
+
+    .category h3 {
+      color: #681d22;
+
+      font-size: 18px;
+      font-weight: normal;
+
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+
+      margin-bottom: 13px;
+    }
+
+    .category p {
+      color: #5f4b3d;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       HOW IT WORKS
+       ========================= */
+
+    .process {
+      background: #eee7db;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 28px;
+    }
+
+    .process-card {
+      padding: 36px 30px;
+
+      background: rgba(255, 252, 245, 0.48);
+
+      border: 1px solid rgba(154, 121, 60, 0.35);
+
+      text-align: center;
+    }
+
+    .process-number {
+      display: block;
+
+      color: #a78445;
+
+      font-size: 30px;
+
+      margin-bottom: 17px;
+    }
+
+    .process-card h3 {
+      color: #681d22;
+
+      font-size: 18px;
+      font-weight: normal;
+
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+
+      margin-bottom: 16px;
+    }
+
+    .process-card p {
+      color: #5f4b3d;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+
+      line-height: 1.75;
+    }
+
+
+    /* =========================
+       STORY / WHATSAPP SECTION
+       ========================= */
+
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      min-height: 580px;
+
+      background: #681d22;
+    }
+
+    .story-image {
+      min-height: 580px;
+
+      background-image: url("patrimoni-detail.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .story-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 70px clamp(35px, 6vw, 90px);
+    }
+
+    .story-content h2 {
+      color: #fff8eb;
+
+      font-size: clamp(31px, 4vw, 48px);
+      font-weight: normal;
+
+      line-height: 1.15;
+
+      margin-bottom: 25px;
+    }
+
+    .story-content p {
+      color: #f1e4d1;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+
+      line-height: 1.8;
+
+      margin-bottom: 18px;
+    }
+
+    .story-content .development {
+      color: #f4dba4;
+    }
+
+    .story-content .btn {
+      margin-top: 10px;
+      align-self: flex-start;
+    }
+
+    .phone {
+      margin-top: 20px;
+
+      color: #f0dba9;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* =========================
+       BENEFITS
+       ========================= */
+
+    .benefits {
+      background: #f4efe5;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 25px;
+    }
+
+    .benefit {
+      text-align: center;
+      padding: 15px 18px;
+    }
+
+    .benefit-symbol {
+      display: block;
+
+      color: #a78445;
+
+      font-size: 25px;
+
+      margin-bottom: 15px;
+    }
+
+    .benefit h3 {
+      color: #681d22;
+
+      font-size: 16px;
+      font-weight: normal;
+
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+
+      margin-bottom: 12px;
+    }
+
+    .benefit p {
+      color: #5f4b3d;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+
+      line-height: 1.65;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    .footer {
+      padding: 58px 20px 35px;
+
+      background: #e9e1d4;
+
+      text-align: center;
+
+      border-top: 1px solid rgba(154, 121, 60, 0.35);
+    }
+
+    .footer h2 {
+      color: #671c22;
+
+      font-size: 24px;
+      font-weight: normal;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 14px;
+    }
+
+    .footer-description {
+      max-width: 600px;
+
+      margin: 0 auto 22px;
+
+      color: #5f4b3d;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+    .footer-contact {
+      margin-bottom: 10px;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    .footer-contact a {
+      color: #681d22;
+      text-decoration: none;
+    }
+
+    .footer-location {
+      color: #6f5128;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+
+      margin-bottom: 30px;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+
+      border-top: 1px solid rgba(154, 121, 60, 0.25);
+
+      color: #7a6b5d;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+
+      line-height: 1.8;
+    }
+
+    .footer-bottom a {
+      color: #681d22;
+      text-decoration: none;
+
+      margin: 0 6px;
+    }
+
+
+    /* =========================
+       FLOATING WHATSAPP
+       ========================= */
+
+    .whatsapp {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 58px;
+      height: 58px;
+
+      border-radius: 50%;
+
+      background: #681d22;
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 12px;
+
+      border: 2px solid #c5a35e;
+
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+
+      z-index: 20;
+    }
+
+
+    /* =========================
+       TABLET
+       ========================= */
+
+    @media (max-width: 900px) {
+
+      .navbar {
+        padding: 18px 15px;
+      }
+
+      .nav-links {
+        gap: 13px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .patrimoni-hero {
+        min-height: 670px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .category:nth-child(2) {
+        border-right: none;
+      }
+
+      .category:nth-child(1),
+      .category:nth-child(2) {
+        border-bottom: 1px solid rgba(154, 121, 60, 0.35);
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+      }
+
+      .story-image {
+        min-height: 430px;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 600px) {
+
+      .navbar {
+        position: relative;
+      }
+
+      .nav-links {
+        gap: 9px 15px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+        letter-spacing: 0.7px;
+      }
+
+      .patrimoni-hero {
+        min-height: 700px;
+
+        background-position: 62% center;
+      }
+
+      .hero-inner {
+        width: 100%;
+
+        padding: 75px 25px;
+      }
+
+      .hero-copy {
+        max-width: 100%;
+      }
+
+      .hero-copy h1 {
+        font-size: 38px;
+      }
+
+      .hero-copy p {
+        font-size: 15px;
+      }
+
+      .hero-trust {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 330px;
+      }
+
+      .section {
+        padding: 60px 22px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category {
+        border-right: none;
+        border-bottom: 1px solid rgba(154, 121, 60, 0.35);
+      }
+
+      .category:last-child {
+        border-bottom: none;
+      }
+
+      .story-image {
+        min-height: 360px;
+      }
+
+      .story-content {
+        padding: 55px 27px;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit {
+        padding: 18px 10px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
+  <header class="navbar">
+
+    <nav>
+      <ul class="nav-links">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="cosa-acquistiamo.html">Cosa acquistiamo</a>
+        </li>
+
+        <li>
+          <a href="selezione.html">Selezione</a>
+        </li>
+
+        <li>
+          <a href="patrimoni.html" class="active">
+            Patrimoni &amp; Collezioni
+          </a>
+        </li>
+
+        <li>
+          <a href="chi-siamo.html">Chi siamo</a>
+        </li>
+
+        <li>
+          <a href="contatti.html">Contatti</a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+         ========================= -->
+
+    <section class="patrimoni-hero">
+
+      <div class="hero-inner">
+
+        <div class="hero-copy">
+
+          <h1>
+            Hai ereditato una casa,<br>
+            un arredamento o una<br>
+            collezione da valorizzare?
+          </h1>
+
+          <div class="lead">
+            Non devi occupartene da solo.
+          </div>
+
+          <p>
+            Stiamo sviluppando un nuovo servizio dedicato a chi
+            possiede patrimoni mobiliari, interi arredamenti e
+            collezioni e desidera comprendere come valorizzarli
+            al meglio.
+            <br><br>
+            Raccontaci la tua situazione su WhatsApp:
+            valuteremo ogni richiesta individualmente e ti
+            ricontatteremo senza impegno.
+          </p>
+
+          <a class="btn btn-primary"
+             href="https://wa.me/393518288621?text=Ciao%2C%20vorrei%20raccontarvi%20la%20mia%20situazione%20riguardo%20a%20un%20patrimonio%2C%20arredamento%20o%20collezione."
+             target="_blank"
+             rel="noopener noreferrer">
+            Parla con noi su WhatsApp
+          </a>
+
+          <div class="hero-trust">
+            <span>Massima discrezione</span>
+            <span>Esperienza e competenza</span>
+            <span>Contatto senza impegno</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         QUALI BENI
+         ========================= -->
+
+    <section class="section categories">
+
+      <div class="section-inner">
+
+        <h2 class="section-title">
+          Quali beni possiamo valutare
+        </h2>
+
+        <div class="gold-divider"></div>
+
+
+        <div class="category-grid">
+
+          <article class="category">
+
+            <span class="category-number">01</span>
+
+            <h3>Arredi e Interior</h3>
+
+            <p>
+              Arredi completi o singoli pezzi di ogni epoca,
+              complementi d'arredo e design italiano
+              del XX secolo.
+            </p>
+
+          </article>
+
+
+          <article class="category">
+
+            <span class="category-number">02</span>
+
+            <h3>Arte e Antiquariato</h3>
+
+            <p>
+              Dipinti, sculture, stampe, oggetti d'arte,
+              libri, manufatti antichi e collezioni tematiche.
+            </p>
+
+          </article>
+
+
+          <article class="category">
+
+            <span class="category-number">03</span>
+
+            <h3>Collezioni e oggetti di valore</h3>
+
+            <p>
+              Porcellane, argenti, cristalli, gioielli,
+              orologi e altri oggetti di interesse
+              collezionistico.
+            </p>
+
+          </article>
+
+
+          <article class="category">
+
+            <span class="category-number">04</span>
+
+            <h3>Interi arredamenti e patrimoni mobiliari</h3>
+
+            <p>
+              Contenuti di abitazioni, eredità e collezioni
+              private, esclusivamente beni mobili.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COME FUNZIONA
+         ========================= -->
+
+    <section class="section process">
+
+      <div class="section-inner">
+
+        <h2 class="section-title">
+          Come funziona
+        </h2>
+
+        <div class="gold-divider"></div>
+
+
+        <div class="process-grid">
+
+          <article class="process-card">
+
+            <span class="process-number">01</span>
+
+            <h3>Raccontaci la tua situazione</h3>
+
+            <p>
+              Scrivici su WhatsApp e descrivici brevemente
+              la tua situazione. Se lo desideri, puoi
+              inviarci anche alcune fotografie.
+            </p>
+
+          </article>
+
+
+          <article class="process-card">
+
+            <span class="process-number">02</span>
+
+            <h3>Analizziamo le informazioni</h3>
+
+            <p>
+              Esaminiamo le informazioni ricevute per
+              comprendere la tipologia dei beni, il loro
+              interesse collezionistico e le possibili
+              opportunità di valorizzazione.
+            </p>
+
+          </article>
+
+
+          <article class="process-card">
+
+            <span class="process-number">03</span>
+
+            <h3>Ti ricontattiamo</h3>
+
+            <p>
+              Valutiamo ogni situazione individualmente
+              e ti ricontattiamo per approfondire le tue
+              esigenze e, se opportuno, illustrarti la
+              soluzione più adatta.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RACCONTACI / IMAGE
+         ========================= -->
+
+    <section class="story">
+
+      <div class="story-image"
+           role="img"
+           aria-label="Arte, design e oggetti da collezione">
+      </div>
+
+
+      <div class="story-content">
+
+        <h2>
+          Raccontaci la tua situazione
+        </h2>
+
+        <p>
+          Hai ereditato un'abitazione con arredi e oggetti
+          di valore? Possiedi una collezione o un intero
+          arredamento che desideri valutare?
+        </p>
+
+        <p class="development">
+          Stiamo raccogliendo richieste per comprendere
+          meglio le esigenze dei nostri clienti e sviluppare
+          un servizio dedicato ai patrimoni mobiliari,
+          agli interi arredamenti e alle collezioni.
+        </p>
+
+        <p>
+          Scrivici su WhatsApp raccontandoci brevemente
+          la tua situazione. Puoi inviarci anche alcune
+          fotografie.
+        </p>
+
+        <p>
+          Ti risponderemo personalmente, con la massima
+          discrezione e senza impegno.
+        </p>
+
+        <a class="btn btn-light"
+           href="https://wa.me/393518288621?text=Ciao%2C%20vorrei%20sottoporvi%20una%20situazione%20relativa%20a%20un%20patrimonio%2C%20arredamento%20o%20collezione."
+           target="_blank"
+           rel="noopener noreferrer">
+          Scrivici su WhatsApp
+        </a>
+
+        <div class="phone">
+          +39 351 828 8621
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BENEFITS
+         ========================= -->
+
+    <section class="section benefits">
+
+      <div class="section-inner">
+
+        <div class="benefit-grid">
+
+          <article class="benefit">
+
+            <span class="benefit-symbol">◇</span>
+
+            <h3>Valutazione senza impegno</h3>
+
+            <p>
+              Ascoltiamo la tua situazione e valutiamo
+              le informazioni ricevute.
+            </p>
+
+          </article>
+
+
+          <article class="benefit">
+
+            <span class="benefit-symbol">◇</span>
+
+            <h3>Approccio personalizzato</h3>
+
+            <p>
+              Ogni patrimonio è diverso. Esaminiamo
+              ogni situazione individualmente.
+            </p>
+
+          </article>
+
+
+          <article class="benefit">
+
+            <span class="benefit-symbol">◇</span>
+
+            <h3>Discrezione e riservatezza</h3>
+
+            <p>
+              Trattiamo ogni richiesta e informazione
+              ricevuta con la massima riservatezza.
+            </p>
+
+          </article>
+
+
+          <article class="benefit">
+
+            <span class="benefit-symbol">◇</span>
+
+            <h3>Esperienza internazionale</h3>
+
+            <p>
+              Conoscenza del mercato dell'arte,
+              dell'antiquariato, del design e del
+              collezionismo in Italia e all'estero.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer class="footer">
+
+    <h2>
+      ITALIAN VINTAGE DECO – MS
+    </h2>
+
+    <p class="footer-description">
+      Selezione e acquisto di arte, antiquariato,
+      design da collezione e oggetti di valore.
+    </p>
+
+    <div class="footer-contact">
+
+      WhatsApp / Tel.
+      <a href="https://wa.me/393518288621"
+         target="_blank"
+         rel="noopener noreferrer">
+        +39 351 828 8621
+      </a>
+
+    </div>
+
+    <div class="footer-location">
+      Milano &bull; Varese &bull; Lago di Lugano &bull; Italia
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2026 Italian Vintage Deco MS –
+      Tutti i diritti riservati
+
+      <br>
+
+      <a href="privacy.html">Privacy Policy</a>
+      &bull;
+      <a href="cookie.html">Cookie Policy</a>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       FLOATING WHATSAPP
+       ========================= -->
+
+  <a class="whatsapp"
+     href="https://wa.me/393518288621?text=Ciao%2C%20vorrei%20ricevere%20maggiori%20informazioni."
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contattaci su WhatsApp">
+    WA
+  </a>
+
+</body>
+</html>
