@@ -1,3 +1,5 @@
+
+}
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -34,87 +36,113 @@ body {
     line-height: 1.35;
 }
 
-/* HEADER */
+/* HEADER — UNIFORME ALLA HOME */
 
-header {
-    height: 52px;
-    background: #fbf8f1;
-    border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
+header.navbar {
     width: 100%;
-    max-width: 1536px;
-    height: 100%;
-    margin: auto;
-    padding: 3px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 22px 5%;
 
-.brand {
     display: flex;
-    align-items: center;
-    gap: 0px;
-    text-decoration: none;
-}
-
-.brand-mark {
-    width: 47px;
-    height: 60px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.brand-mark svg {
-    width: 45px;
-    height: 56px;
-    fill: var(--gold);
-}
-
-.brand-text strong {
-    display: block;
-    color: var(--burgundy);
-    font-size: 20px;
-    font-weight: normal;
-    line-height: 1;
-    white-space: nowrap;
-}
-
-.brand-text span {
-    display: block;
-    color: #40362f;
-    margin-top: 7px;
-    font-size: 12px;
-    letter-spacing: .5px;
-    white-space: nowrap;
-}
-
-nav {
-    display: flex;
     align-items: center;
-    gap: 39px;
-    height: 100%;
+
+    background: #f6f1e6;
+    border-bottom: 1px solid rgba(124, 91, 35, 0.35);
+
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: normal;
+
+    position: relative;
+    z-index: 10;
 }
 
-nav a {
+header.navbar > nav {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+header.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    gap: 34px;
+}
+
+header.navbar .nav-links a {
     position: relative;
-    color: var(--burgundy);
+    display: inline;
+    flex: none;
+    margin: 0;
+    padding: 0;
+
+    color: #651d22;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: 1.5px;
+
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 14px;
-    white-space: nowrap;
-    padding: 10px 0;
+    white-space: normal;
+    border: none;
+
+    transition: opacity 0.2s ease;
 }
 
-nav a.active {
+header.navbar .nav-links a:hover {
+    opacity: 0.65;
+}
+
+header.navbar .nav-links a.active {
     color: #9a793c;
     font-weight: bold;
     border-bottom: 1px solid #9a793c;
     padding-bottom: 4px;
+}
+
+/* TABLET — COME NELLA HOME */
+
+@media (max-width: 900px) {
+    header.navbar {
+        padding: 18px 15px;
     }
+
+    header.navbar .nav-links {
+        gap: 13px;
+        flex-wrap: wrap;
+    }
+
+    header.navbar .nav-links a {
+        font-size: 11px;
+    }
+}
+
+/* TELEFONO — COME NELLA HOME */
+
+@media (max-width: 600px) {
+    header.navbar .nav-links {
+        gap: 9px 15px;
+    }
+
+    header.navbar .nav-links a {
+        font-size: 10px;
+        letter-spacing: 0.7px;
+    }
+}
+
     
         
 
@@ -198,8 +226,6 @@ nav a.active {
 .category-icon {
     height: 28px;
     margin-bottom: 7px;
-}
-
 .category-icon svg {
     width: 22px;
     height: 28px;
