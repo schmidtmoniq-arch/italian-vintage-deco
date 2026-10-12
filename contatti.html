@@ -1,1 +1,426 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contatti | Italian Vintage Deco – MS</title>
+
+    <meta name="description"
+        content="Contatta Italian Vintage Deco – MS via WhatsApp, telefono o email per proporre oggetti d’arte, antiquariato, design e collezioni.">
+
+    <style>
+        /* BASE */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f4efe5;
+            color: #681d22;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:focus-visible {
+            outline: 2px solid #a78345;
+            outline-offset: 5px;
+        }
+
+        /* NAVIGAZIONE */
+
+        .navbar {
+            min-height: 70px;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(246, 241, 230, .96);
+            border-bottom: 1px solid rgba(124, 91, 35, .30);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 34px;
+        }
+
+        .nav-links a {
+            color: #651d22;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: opacity .2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: .65;
+        }
+
+        .nav-links a.active {
+            color: #9a793c;
+            font-weight: bold;
+            border-bottom: 1px solid #9a793c;
+            padding-bottom: 4px;
+        }
+
+        /* TITOLO */
+
+        .contacts {
+            max-width: 960px;
+            margin: auto;
+            padding: 64px 30px 65px;
+            text-align: center;
+        }
+
+        .contacts h1 {
+            font-size: clamp(38px, 5vw, 52px);
+            font-weight: normal;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .subtitle {
+            color: #7c5b23;
+            font-size: clamp(19px, 2.5vw, 23px);
+            font-style: italic;
+            line-height: 1.5;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .title-line {
+            width: 72px;
+            height: 1px;
+            background: #a78345;
+            margin: 25px auto 42px;
+        }
+
+        /* CONTATTI */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .contact-item {
+            padding: 15px 25px 22px;
+            min-width: 0;
+        }
+
+        .contact-item:first-child {
+            border-right: 1px solid rgba(166, 127, 67, .30);
+        }
+
+        .contact-item h2 {
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 17px;
+        }
+
+        .contact-value {
+            display: inline-block;
+            max-width: 100%;
+            margin-bottom: 24px;
+            color: #5f4b3d;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            line-height: 1.6;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-value:hover {
+            text-decoration: underline;
+        }
+
+        .contact-action {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 23px;
+            border: 1px solid #b28b49;
+            background: #681d22;
+            color: #fffaf0;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            line-height: 1.5;
+            transition: background .2s ease;
+        }
+
+        .btn:hover {
+            background: #501318;
+        }
+
+        .email-link {
+            padding: 10px 0;
+            color: #681d22;
+            text-decoration: none;
+            border-bottom: 1px solid #a78345;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .email-link:hover {
+            color: #7c5b23;
+        }
+
+        .contact-note {
+            margin: 34px auto 0;
+            max-width: 600px;
+            color: #5f4b3d;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            padding: 27px 20px 24px;
+            text-align: center;
+            background: #e9e1d4;
+            border-top: 1px solid rgba(154, 121, 60, .30);
+        }
+
+        .footer h2 {
+            color: #671c22;
+            font-size: 20px;
+            font-weight: normal;
+            letter-spacing: 1.5px;
+            margin-bottom: 7px;
+        }
+
+        .footer-description {
+            color: #5f4b3d;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .footer-location {
+            color: #6f5128;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11.5px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .footer-bottom {
+            max-width: 900px;
+            margin: auto;
+            padding-top: 12px;
+            border-top: 1px solid rgba(154, 121, 60, .22);
+            color: #7a6b5d;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10.5px;
+            line-height: 1.8;
+        }
+
+        .footer-bottom a {
+            color: #681d22;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 17px 15px;
+            }
+
+            .nav-links {
+                gap: 13px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+        }
+
+        /* TELEFONO */
+
+        @media (max-width: 600px) {
+            .nav-links {
+                gap: 9px 15px;
+            }
+
+            .nav-links a {
+                font-size: 10px;
+                letter-spacing: .7px;
+            }
+
+            .contacts {
+                padding: 43px 24px 46px;
+            }
+
+            .title-line {
+                margin-bottom: 25px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-item {
+                padding: 25px 0;
+            }
+
+            .contact-item:first-child {
+                border-right: none;
+                border-bottom: 1px solid rgba(166, 127, 67, .30);
+            }
+
+            .contact-value {
+                font-size: 16px;
+                margin-bottom: 18px;
+            }
+
+            .contact-note {
+                margin-top: 18px;
+            }
+
+            .footer h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGAZIONE -->
+
+    <header class="navbar">
+        <nav aria-label="Navigazione principale">
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="cosa-acquistiamo.html">Cosa acquistiamo</a>
+                </li>
+                <li>
+                    <a href="selezione.html">Selezione</a>
+                </li>
+                <li>
+                    <a href="patrimoni.html">Patrimoni &amp; Collezioni</a>
+                </li>
+                <li>
+                    <a href="chi-siamo.html">Chi siamo</a>
+                </li>
+                <li>
+                    <a href="contatti.html" class="active" aria-current="page">
+                        Contatti
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTATTI -->
+
+    <main class="contacts">
+        <h1>Contatti</h1>
+
+        <p class="subtitle">
+            Per proporci un oggetto o raccontarci la tua situazione.
+        </p>
+
+        <div class="title-line" aria-hidden="true"></div>
+
+        <div class="contact-grid">
+
+            <section class="contact-item" aria-labelledby="telefono">
+                <h2 id="telefono">WhatsApp / Telefono</h2>
+
+                <a class="contact-value" href="tel:+393518288621">
+                    +39 351 828 8621
+                </a>
+
+                <div class="contact-action">
+                    <a
+                        class="btn"
+                        href="https://wa.me/393518288621?text=Ciao%2C%20vorrei%20proporvi%20un%20oggetto%20o%20raccontarvi%20la%20mia%20situazione."
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Scrivici su WhatsApp
+                    </a>
+                </div>
+            </section>
+
+            <section class="contact-item" aria-labelledby="email">
+                <h2 id="email">Email</h2>
+
+                <a
+                    class="contact-value"
+                    href="mailto:info@italianvintagedeco.com">
+                    info@italianvintagedeco.com
+                </a>
+
+                <div class="contact-action">
+                    <a
+                        class="email-link"
+                        href="mailto:info@italianvintagedeco.com">
+                        Scrivici via email
+                    </a>
+                </div>
+            </section>
+
+        </div>
+
+        <p class="contact-note">
+            Puoi inviarci fotografie e una breve descrizione degli oggetti.
+        </p>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <h2>ITALIAN VINTAGE DECO – MS</h2>
+
+        <p class="footer-description">
+            Selezione e acquisto di arte, antiquariato,<br>
+            design da collezione e oggetti di valore.
+        </p>
+
+        <div class="footer-location">
+            Milano &bull; Varese &bull; Lago di Lugano &bull; Italia
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Italian Vintage Deco MS – Tutti i diritti riservati
+
+            &nbsp;&bull;&nbsp;
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            &nbsp;&bull;&nbsp;
+
+            <a href="cookie.html">Cookie Policy</a>
+        </div>
+    </footer>
+
+</body>
+</html>
 
